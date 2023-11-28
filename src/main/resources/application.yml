@@ -1,0 +1,14 @@
+spring:
+  threads:
+    virtual:
+      enabled: true
+
+  datasource:
+    url: jdbc:mariadb://${DB_HOST:localhost}:${DB_PORT:3306}/routes
+    username: ${DB_USER:jefao}
+    password: ${DB_PASSWORD:jefao}
+    driver-class-name: org.mariadb.jdbc.Driver
+    hikari:
+      maximum-pool-size: 60
+      minimum-idle: 10
+      idle-timeout: 300000
