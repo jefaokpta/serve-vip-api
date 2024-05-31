@@ -18,6 +18,7 @@ class DatabaseController(
     private val peerRepository: PeerRepository,
     private val trunkRepository: TrunkRepository,
     private val routeRepository: RouteRepository,
+    private val uraRepository: UraRepository
 ) {
 
     private val log = LoggerFactory.getLogger(this::class.java)
@@ -36,5 +37,8 @@ class DatabaseController(
 
     @GetMapping("/routes")
     fun getAllRoutes() = routeRepository.findAll()
+
+    @GetMapping("/uras")
+    fun getAllUras() = uraRepository.findAll()
 
 }
